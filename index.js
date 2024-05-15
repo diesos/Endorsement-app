@@ -39,7 +39,16 @@ onValue(itemsInDb, function(snapshot){
 // function push to database
 publishBtn.addEventListener('click', () =>{
     let message = textEl.value
-    push(itemsInDb, message)
+    if (message !== ""){
+        push(itemsInDb, message)
+    }
+    else{
+        let newText = document.createElement("h4")
+        newText.textContent = `You must type something...?`
+        document.getElementById("error-container").textContent = ""
+        document.getElementById("error-container").appendChild(newText)
+
+    }
 })
 // function to clear the list
 function clearList(){
