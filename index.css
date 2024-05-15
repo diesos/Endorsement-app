@@ -132,9 +132,27 @@ li{
     width: 16px;
     height: 16px;
     align-self: center;
-    margin-left: 300px;
+    margin-left: auto;
 }
 
 .compteur{
     align-self: center;
 }
+
+.endorsementDiv, p{
+    max-width: 420px;
+    overflow-wrap: break-word;
+
+}
+textarea {
+    /* will prevent resizing horizontally */
+    resize:vertical;
+ }
+
+ footer{
+    color: gray;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    font-size: 13px;
+    opacity: 60%;
+ }
