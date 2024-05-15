@@ -24,7 +24,7 @@ html, body, ul{
     flex-wrap: wrap;
 }
 
-img{
+.container >img{
     width: 200px;
     margin-top: 30px;
     box-sizing: border-box;
@@ -120,4 +120,20 @@ li{
     justify-content: center;
     list-style: none;
     flex-grow: 1;
+}
+
+.review-contain{
+    display: flex;
+    justify-content: space-around;
+}
+
+.review-contain > img{
+    width: 16px;
+    height: 16px;
+    align-self: center;
+    margin-left: 300px;
+}
+
+.compteur{
+    align-self: center;
 }
