@@ -1,10 +1,14 @@
 .josefin-sans {
     font-family: "Josefin Sans", sans-serif;
   }
+
+.inter{
+    font-family: "Inter", sans-serif;
+}
 .white {
     color: white;
 }
-html, body {
+html, body, ul{
     margin: 0;
     padding: 0;
     background-color: #1B1924;
@@ -31,6 +35,13 @@ h1{
     font-size: 40px;
     font-weight: bold;
     text-align: center;
+}
+h3{
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin: 30px 0 0 0
+
 }
 
 .input-field{
@@ -94,4 +105,19 @@ input::placeholder{
     font-size: 30px;
     font-weight: 900;
 
+}
+ul{
+    margin: 0px;
+    padding: 0px;
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+li{
+    padding: 5px 30px 5px 30px;
+    margin-top: 20px;
+    background-color: white;
+    gap: 0px 40px;
+    justify-content: center;
+    list-style: none;
+    flex-grow: 1;
 }
