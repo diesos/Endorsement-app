@@ -10,19 +10,19 @@ const app = initializeApp(appSettings)
 const database = getDatabase(app)
 const itemsInDb = ref(database, "comments")
 
-// Element selector
+// Element selector / TODO: senderId + receiverId
 const publishBtn = document.getElementById("publish-btn")
 const textEl = document.getElementById("text-input")
-const senderEl = document.getElementById("send-from")
-const receiverEl = document.getElementById("send-to")
+// const senderEl = document.getElementById("send-from")
+// const receiverEl = document.getElementById("send-to")
 const divEl = document.getElementById("endorsement")
 
+let count = 0
 
 onValue(itemsInDb, function(snapshot){
     clearList()
     if (snapshot.exists()){
         const itemsArray = Object.entries(snapshot.val())
-        console.log(itemsArray)
 
         for (let i = 0; i < itemsArray.length; i++)
             {   let currentMessage = itemsArray[i]
@@ -39,12 +39,17 @@ onValue(itemsInDb, function(snapshot){
 // function push to database
 publishBtn.addEventListener('click', () =>{
     let message = textEl.value
-    if (message !== ""){
+
+    if (message !== "" && count < 4){
         push(itemsInDb, message)
+        document.getElementById("error-container").textContent = ""
+        textEl.value = ""
+        count++
+
     }
     else{
         let newText = document.createElement("h4")
-        newText.textContent = `You must type something...?`
+        newText.textContent = `You must type something or wait...?`
         document.getElementById("error-container").textContent = ""
         document.getElementById("error-container").appendChild(newText)
 
