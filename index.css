@@ -113,6 +113,7 @@ ul{
     box-sizing: border-box;
 }
 li{
+    font-family: "Inter", sans-serif;
     padding: 5px 30px 5px 30px;
     margin-top: 20px;
     background-color: white;
